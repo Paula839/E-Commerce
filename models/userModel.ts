@@ -13,4 +13,4 @@ export interface user {
   cart: cart[];
 }
 
-export const buyers = database.collection<user>("buyers");
+export const buyers = database.collection<user>("users");
