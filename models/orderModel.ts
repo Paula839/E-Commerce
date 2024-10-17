@@ -1,6 +1,8 @@
 import { ObjectId } from "mongodb";
 import { database } from "../db/database";
-export interface order {
+export interface order 
+{
+  _id: ObjectId;
   userId: ObjectId;
   orderedItems: {
     productId: ObjectId;
@@ -13,5 +15,4 @@ export interface order {
   address: string;
   total: number;
 }
-
 export const orders = database.collection<order>("orders");
