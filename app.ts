@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import { cartRouter } from "./routes/CartRouter";
 import { userRouter } from "./routes/userRouter";
 import { productsRrouter } from "./routes/productsRouter";
+import { orderRouter } from "./routes/ordersRouter";
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/cart", cartRouter)
 app.use("/api/user", userRouter)
 app.use("/api/products", productsRrouter)
+app.use("/api/orders", orderRouter)
 //
 
 app.listen(PORT, () => {

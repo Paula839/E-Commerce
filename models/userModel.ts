@@ -7,7 +7,7 @@ export interface user {
   lastName: string;
   email: string;
   password: string;
-  address?: string;
+  address: string;
   phoneNumber: string;
   imageDir: string;
   cart: cartItem[];
