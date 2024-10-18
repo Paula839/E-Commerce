@@ -2,6 +2,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv"
 import { cart } from "./routes/cart";
+import { products } from "./routes/products";
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ app.use(express.json());
 //Routes
 
 app.use("/api/cart", cart)
+app.use("/api/products", products);
 
 
 
