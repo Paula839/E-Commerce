@@ -4,6 +4,6 @@ import multer from "multer";
 import { userTokenAuth } from "../middleware/userTokenAuth";
 export const userRouter = Router();
 
-userRouter.post("/", multer().single("image"), userController.signup);
+userRouter.post("/api/user", multer().single("image"), userController.signup);
 
-userRouter.get("/", userController.signIn);
+userRouter.get("/api/user", userController.signIn);

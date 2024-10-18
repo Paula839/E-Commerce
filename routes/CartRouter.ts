@@ -4,6 +4,6 @@ import { userTokenAuth } from "../middleware/userTokenAuth"
 
 export const cartRouter = Router()
 
-cartRouter.post("/", userTokenAuth, cartController.post)
-cartRouter.get("/", userTokenAuth, cartController.get)
-cartRouter.delete("/:id", userTokenAuth, cartController.del)
+cartRouter.post("/api/cart", userTokenAuth, cartController.post)
+cartRouter.get("/api/cart", userTokenAuth, cartController.get)
+cartRouter.delete("api/cart/:id", userTokenAuth, cartController.del)

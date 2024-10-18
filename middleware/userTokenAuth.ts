@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import { RequestHandler, Request, Response, NextFunction, json } from "express";
 
-let secretKey = "azzam2003";
-export const userTokenAuth: RequestHandler = (
-  req: Request,
+let secretKey = "azzam2005";
+export const userTokenAuth: RequestHandler<any,any,any,any> = (
+  req: Request<any,any,any,any>,
   res: Response,
   next
 ) => {

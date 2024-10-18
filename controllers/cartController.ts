@@ -1,7 +1,7 @@
 import {Request, Response} from "express"
 import { ObjectId } from "mongodb";
 import {users, user} from "../models/userModel";
-import {items, product} from "../models/productModel";
+import { product, products} from "../models/productModel";
 import {cartItem} from "../models/cartModel";
 
 
@@ -19,16 +19,15 @@ const get = async (req: Request, res: Response) => {
 
         const itemIds: ObjectId[] = userCart.map((cartItem) => cartItem.item);
 
-        const products: product[] = await items.find({ _id: { $in: itemIds } }).toArray();
-
-        const totalPrice: number = products.reduce((sum, product) => {
+        const listProducts: product[] = (await products.find({ _id: { $in: itemIds } }).toArray());
+        const totalPrice: number = listProducts.reduce((sum, product) => {
             const cartItem = userCart.find((item) => item.item.toString() === product._id.toString());
             return sum + product.price * (cartItem?.quantity || 0); // Use quantity from cartItem
         }, 0);
 
         
 
-        res.status(200).json({ products, userCart, totalPrice });
+        res.status(200).json({ products: listProducts, userCart, totalPrice });
     } catch (error) {
         
         res.status(500).json({ message: "Failed to fetch cart products", error });
@@ -46,7 +45,7 @@ const post = async (req: Request, res: Response) => {
     }
 
     try {
-        const product = await items.findOne({ _id: new ObjectId(productId) });
+        const product = await products.findOne({ _id: new ObjectId(productId) });
         if (!product) {
             res.status(404).json({ message: "Product not found" });
             return;

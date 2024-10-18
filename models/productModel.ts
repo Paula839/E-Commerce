@@ -10,4 +10,21 @@ export interface product {
   quantity: number;
 }
 
-export const items = database.collection<product>("products");
+export interface productRequest {
+  name: string;
+  price: number;
+  description: string;
+  category: string;
+  quantity: number;
+}
+
+export interface productUpdateRequest
+{
+  id:string;
+  name?: string;
+  price?: number;
+  description?: string;
+  category?:string;
+  quantity?: number;
+}
+export const products = database.collection<product>("products");

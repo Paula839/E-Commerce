@@ -1,7 +1,7 @@
 import { admin,admins } from "../models/AdminModel";
 import { RequestHandler, Response, Request } from "express";
 import Jwt from "jsonwebtoken";
-let secretKey = "azzam2003";
+let secretKey = "poula2002";
 export const adminLogin: RequestHandler = async(req: Request<{},{},admin>, res:Response) => {
     try{
     const admin:admin|null = await admins.findOne({ userName: req.body.userName, password: req.body.password });

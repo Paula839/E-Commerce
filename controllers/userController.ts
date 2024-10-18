@@ -9,7 +9,7 @@ import fs from "fs/promises";
 import { ObjectId } from "mongodb";
 import Jwt from "jsonwebtoken";
 
-let secretKey = "azzam2003";
+let secretKey = "azzam2005";
 const signup: RequestHandler = async (
   req: Request<{}, {}, userSignUpRequest, {}>,
   res
@@ -78,7 +78,7 @@ const signIn: RequestHandler = async (
         jwtid: new Date().getTime().toString(),
         subject: user._id.toString(),
       });
-      res.status(200).send({token: token, userId: user._id});
+      res.status(200).send({ token: token });
     } else {
       res.status(400).send("user not found");
     }
