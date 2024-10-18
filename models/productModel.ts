@@ -4,7 +4,7 @@ export interface product {
   _id: ObjectId;
   name: string;
   price: number;
-  imageDir: string;
+  imageDirs: string[];
   description: string;
   category: string;
   quantity: number;

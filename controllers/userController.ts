@@ -78,7 +78,7 @@ const signIn: RequestHandler = async (
         jwtid: new Date().getTime().toString(),
         subject: user._id.toString(),
       });
-      res.status(200).send({token: token});
+      res.status(200).send({token: token, userId: user._id});
     } else {
       res.status(400).send("user not found");
     }

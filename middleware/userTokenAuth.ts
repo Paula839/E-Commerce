@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { RequestHandler, Request, Response, NextFunction, json } from "express";
 
 let secretKey = "azzam2003";
-export const adminTokenAuth: RequestHandler = (
+export const userTokenAuth: RequestHandler = (
   req: Request,
   res: Response,
   next

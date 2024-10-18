@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import { RequestHandler,Request,Response,NextFunction, json } from 'express';
 
 let secretKey = "azzam2003";
-export const userTokenAuth:RequestHandler = (req:Request, res:Response, next) => { 
+export const adminTokenAuth:RequestHandler = (req:Request, res:Response, next) => { 
 
     if (!req.headers.authorization) {
        res.status(401).send("Access denied. No token provided.");
