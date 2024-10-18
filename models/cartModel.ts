@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-export interface cart {
+export interface cartItem {
   item: ObjectId;
   name: string;
   quantity: number;

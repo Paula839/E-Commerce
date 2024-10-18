@@ -1,16 +1,31 @@
 import { ObjectId } from "mongodb";
 import { database } from "../db/database";
-import { cart } from "./cartModel";
+import { cartItem } from "./cartModel";
 export interface user {
   _id: ObjectId;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  addresses?: string[];
-  phoneNumber: number;
+  address?: string;
+  phoneNumber: string;
   imageDir: string;
-  cart: cart[];
+  cart: cartItem[];
 }
 
-export const buyers = database.collection<user>("users");
+export interface userSignUpRequest {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  address?: string;
+  phoneNumber: string;
+  imageDir: string;
+}
+
+export interface userLoginRequest {
+  email: string;
+  password: string;
+}
+
+export const users = database.collection<user>("users");
