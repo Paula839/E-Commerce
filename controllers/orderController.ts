@@ -75,15 +75,9 @@ const create: RequestHandler = async (req: Request, res: Response) => {
 
 
 const viewAll: RequestHandler = async (req: Request, res: Response) => {
-    try {
-        const user: user | null = await users.findOne({ _id: ObjectId.createFromHexString(req.body.userId) });
-        if(!user) {
-            res.status(404).json({message: "User not found"});
-            return;
-        }
+    try {    
         
-        const getAllOrders =  await orders.find().toArray();
-
+        const getAllOrders = await orders.find({}).toArray();
         res.status(200).json({getAllOrders});
     
 

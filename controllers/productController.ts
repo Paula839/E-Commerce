@@ -48,14 +48,7 @@ export const addProduct = async (req: Request, res: Response) => {
         category: category.trim(),
         quantity: quantity,
       };
-    // const newProduct = await items.insertOne({
-    //   name,
-    //   price,
-    //   imageDir,
-    //   description,
-    //   category,
-    //   quantity,
-    // });
+ 
     await items.insertOne(newProduct);
     res.status(201).json({ message: "Product added successfully"});
   } catch (error) {
