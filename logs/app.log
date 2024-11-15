@@ -1,0 +1,7 @@
+[2024-11-15 13:42:19] INFO: GET /api/orders/admin
+[2024-11-15 13:42:58] INFO: GET /api/orders/user
+[2024-11-15 13:43:05] INFO: POST /api/orders/user
+[2024-11-15 13:43:10] INFO: PUT /api/orders/user
+[2024-11-15 13:48:16] INFO: Method: GET, URL: /api/orders/user, Status: 404, Client IP: ::1, Duration: 6ms, Headers: {"user-agent":"PostmanRuntime/7.39.1","accept":"*/*","cache-control":"no-cache","postman-token":"21f778ab-9d04-4489-98a1-8864722ab5a2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}, Query: {}, Body: {}
+[2024-11-15 13:49:48] INFO: Method: GET, URL: /api/orders/usern, Status: 404, Client IP: ::1, Duration: 1ms, Headers: {"user-agent":"PostmanRuntime/7.39.1","accept":"*/*","cache-control":"no-cache","postman-token":"0ed3c4f5-e610-470c-9fc3-c093c6b71389","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}, Query: {}, Body: {}
+[2024-11-15 13:50:24] INFO: Method: GET, URL: /api/orders/usern, Status: 404, Client IP: ::1, Duration: 0ms, Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.39.1","accept":"*/*","cache-control":"no-cache","postman-token":"e55b944a-117d-4aff-96ea-a991b5ca9e77","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"29"}, Query: {}, Body: {"HHHHHHh":"HHHHHHH"}
